@@ -1,0 +1,139 @@
+@import '_vars';
+@import '_normalize';
+@import '_commons';
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+
+.todolist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rem;
+  width: 90vw;
+  max-width: 35rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s linear;
+  padding: 2rem;
+  background-color: #fff;
+  &:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+  }
+  &__message {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 2rem 0;
+    padding: 0.3rem;
+    border-radius: 0.25rem;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    transition: all 1s linear;
+    &_danger {
+      color: $burgundy1;
+      background-color: $burgundy2;
+    }
+    &_success {
+      color: $green3;
+      background-color: $green4;
+    }
+  }
+  &__clear {
+    background-color: transparent;
+    margin: 2rem 0 0 0;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    font-size: 1rem;
+    cursor: pointer;
+    color: $red1;
+    display: none;
+    transition: all 0.3s linear;
+    &:hover {
+      color: $red2;
+    }
+    &_active {
+      display: block;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 0.3rem 0.3rem 1rem;
+    margin-top: 2rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s linear;
+    &:hover {
+      background-color: $grey1;
+    }
+    &-control {
+      width: 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0.7rem 0 0;
+    }
+    &-trash {
+      color: $red1;
+      cursor: pointer;
+      transition: all 0.3s linear;
+      &:hover {
+        color: $red2;
+      }
+    }
+    &-pen {
+      color: $green1;
+      cursor: pointer;
+      transition: all 0.3s linear;
+      &:hover {
+        color: $green2;
+      }
+    }
+  }
+  &__title {
+    margin: 0 0 1.5rem 0;
+    &-text {
+      font-size: 1.75rem;
+      letter-spacing: 2px;
+    }
+  }
+  &__block {
+    width: 100%;
+  }
+  &__form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    &-input {
+      flex: 1 0 auto;
+      background-color: $grey1;
+      padding: 0.25rem 0.25rem 0.25rem 1rem;
+      color: $grey2;
+      border-radius: 0.25rem 0 0 0.25rem;
+      font-size: 1rem;
+      border: 2px solid transparent;
+      &:focus {
+        border-color: #000;
+        border-radius: 0.25rem;
+      }
+    }
+    &-submit {
+      background-color: $blue1;
+      flex: 0 0 5rem;
+      letter-spacing: 2px;
+      font-size: .85rem;
+      cursor: pointer;
+      border-radius: 0 0.25rem 0.25rem 0;
+      transition: all 0.3s linear;
+      &:hover {
+        background-color: $blue2;
+        color: #fff;
+      }
+    }
+  }
+}
